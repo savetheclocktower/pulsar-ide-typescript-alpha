@@ -20,7 +20,7 @@
     "source.tsx:root-scope-used"
   ],
   "dependencies": {
-    "atom-languageclient": "github:savetheclocktower/atom-languageclient#60fa216",
+    "atom-languageclient": "github:savetheclocktower/atom-languageclient#a014bd2",
     "typescript": "^5.1.6",
     "typescript-language-server": "^3.3.2"
   },
