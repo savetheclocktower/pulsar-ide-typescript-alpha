@@ -22,19 +22,23 @@ This package integrates with `symbols-view-redux`, the successor to the builtin 
 
 You can view a comprehensive list of file symbols with <kbd>Ctrl-R</kbd>/<kbd>Cmd-R</kbd>:
 
-[screenshot]
+<img width="632" alt="file-symbols" src="https://github.com/savetheclocktower/pulsar-ide-typescript-alpha/assets/3450/6b07688b-b1f7-48bd-86ae-d3105eb213f9">
 
 Or search the entire package for symbols via <kbd>Ctrl-Shift-R</kbd>/<kbd>Cmd-Shift-R</kbd>:
 
-[screenshot]
+<img width="660" alt="project-wide-symbols" src="https://github.com/savetheclocktower/pulsar-ide-typescript-alpha/assets/3450/90b76096-1562-4f78-8f1a-59b00b1375c2">
 
-Or use <kbd>Ctrl-Alt-Down</kbd>/<kbd>Cmd-Opt-Down</kbd> to jump to the definition of the symbol under the cursor — even if it’s in another file — then use <kbd>Ctrl-Alt-Up</kbd>/<kbd>Cmd-Opt-Up</kbd> to return to your original cursor position.
+
+Or use <kbd>Ctrl-Alt-Down</kbd>/<kbd>Cmd-Opt-Down</kbd> to jump to the definition of the symbol under the cursor — even if it’s in another file — then use <kbd>Ctrl-Alt-Up</kbd>/<kbd>Cmd-Opt-Up</kbd> to return to your original cursor position:
+
+![jump-to-definition](https://github.com/savetheclocktower/pulsar-ide-typescript-alpha/assets/3450/c2158087-084a-4bda-999e-99b39fb403af)
+
 
 ### Ability to ignore certain diagnostic messages
 
 This package allows you to ignore certain kinds of diagnostic messages. You can choose whether to ignore them altogether or just until the file is saved:
 
-[screenshot]
+<img width="667" alt="intentions" src="https://github.com/savetheclocktower/pulsar-ide-typescript-alpha/assets/3450/a89ec391-dac7-463c-8036-9742f5a28c3c">
 
 The latter is useful for annoying messages that point out “problems” in your code that you simply haven’t had a chance to fix yet because you’re _literally still typing_.
 
