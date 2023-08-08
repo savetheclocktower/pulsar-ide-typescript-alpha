@@ -1,0 +1,184 @@
+{
+  "name": "pulsar-ide-typescript-alpha",
+  "main": "./lib/main",
+  "version": "0.0.1",
+  "description": "A Pulsar-native IDE provider package for TypeScript and JavaScript",
+  "keywords": [],
+  "repository": "https://github.com/savetheclocktower/pulsar-ide-typescript-alpha",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "activationCommands": {
+    "atom-workspace": [
+      "pulsar-ide-typescript-alpha:start-language-server"
+    ]
+  },
+  "activationHooks": [
+    "source.js:root-scope-used",
+    "source.ts:root-scope-used",
+    "source.tsx:root-scope-used"
+  ],
+  "dependencies": {
+    "atom-languageclient": "github:savetheclocktower/atom-languageclient#60fa216",
+    "typescript": "^5.1.6",
+    "typescript-language-server": "^3.3.2"
+  },
+  "configSchema": {
+    "includeJavaScript": {
+      "order": 1,
+      "title": "Include JavaScript",
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to use this language server's features for JavaScript files."
+    },
+    "linter": {
+      "type": "object",
+      "order": 2,
+      "title": "Linter",
+      "properties": {
+        "ignoredCodes": {
+          "title": "Ignored Codes",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "A comma-separated list of diagnostic codes that should be ignored by the linter."
+        },
+        "ignoredCodesWhenBufferIsModified": {
+          "title": "Ignored Codes (while buffer is modified)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "A comma-separated list of diagnostic codes that should be ignored by the linter **until you save the buffer**. (This can suppress linter messages that interrupt you to remind you to do things that you were about to do anyway.)"
+        },
+        "includeMessageCodeInMessageBody": {
+          "title": "Include Message Code in Message Body",
+          "type": "boolean",
+          "default": false,
+          "description": "When enabled, will include the code for a linter message at the end of its body."
+        }
+      }
+    },
+    "symbols": {
+      "order": 3,
+      "type": "object",
+      "title": "Symbols",
+      "properties": {
+        "ignoredTags": {
+          "title": "Ignored Tags",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "A comma-separated list of tags that should be ignored when generating symbols."
+        },
+        "minimumQueryLength": {
+          "title": "Minimum Query Length",
+          "default": 3,
+          "type": "number",
+          "description": "The minimum number of characters a user must type on a **project-wide symbol search** before the request is forwarded to the language server."
+        }
+      }
+    },
+    "advanced": {
+      "order": 4,
+      "collapsed": true,
+      "type": "object",
+      "title": "Advanced",
+      "properties": {
+        "additionalScopes": {
+          "title": "Additional Scopes",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "A comma-separated list of additional language scopes for which the language server's features should be used. (The language server will not start automatically when you open one of these files; you may have to start the language server manually via the **Experimental Typescript Lsp: Start Language Server** command.)"
+        }
+      }
+    }
+  },
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "consumeLinterV2"
+      }
+    },
+    "datatip": {
+      "versions": {
+        "0.1.0": "consumeDatatip"
+      }
+    },
+    "signature-help": {
+      "versions": {
+        "0.1.0": "consumeSignatureHelp"
+      }
+    }
+  },
+  "providedServices": {
+    "intentions:list": {
+      "versions": {
+        "1.0.0": "provideIntentionsList"
+      }
+    },
+    "symbol.provider": {
+      "description": "Allows external sources to suggest symbols for a given file or project.",
+      "versions": {
+        "1.0.0": "provideSymbols"
+      }
+    },
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "code-actions": {
+      "versions": {
+        "0.1.0": "provideCodeActions"
+      }
+    },
+    "code-format.range": {
+      "versions": {
+        "0.1.0": "provideCodeFormat"
+      }
+    },
+    "call-hierarchy": {
+      "versions": {
+        "0.1.0": "provideCallHierarchy"
+      }
+    },
+    "code-highlight": {
+      "versions": {
+        "0.1.0": "provideCodeHighlight"
+      }
+    },
+    "definitions": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
+    },
+    "find-references": {
+      "versions": {
+        "0.1.0": "provideFindReferences"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
+    },
+    "refactor": {
+      "versions": {
+        "0.1.0": "provideRefactor"
+      }
+    }
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0"
+  }
+}
