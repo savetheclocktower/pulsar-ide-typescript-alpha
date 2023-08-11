@@ -37,6 +37,12 @@
       "order": 2,
       "title": "Linter",
       "properties": {
+        "enable": {
+          "title": "Enable",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show diagnostic messages via the `linter` package. (Takes effect after a window reload or a restart of Pulsar.)"
+        },
         "ignoredCodes": {
           "title": "Ignored Codes",
           "type": "array",
@@ -68,6 +74,12 @@
       "type": "object",
       "title": "Symbols",
       "properties": {
+        "enable": {
+          "title": "Enable",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to provide symbols for the current file, for project-wide symbol search, and for going to the definition of a symbol. (Takes effect after a window reload or a restart of Pulsar.)"
+        },
         "ignoredTags": {
           "title": "Ignored Tags",
           "type": "array",
@@ -85,8 +97,22 @@
         }
       }
     },
-    "advanced": {
+    "autocomplete": {
       "order": 4,
+      "type": "object",
+      "title": "Autocomplete",
+      "collapsed": false,
+      "properties": {
+        "enable": {
+          "title": "Enable",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to suggest contextual completions with `autocomplete-plus`. (Takes effect after a window reload or a restart of Pulsar.)"
+        }
+      }
+    },
+    "advanced": {
+      "order": 5,
       "collapsed": true,
       "type": "object",
       "title": "Advanced",

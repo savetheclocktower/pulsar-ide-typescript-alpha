@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     "semi": ["error", "always"],
     "space-before-function-paren": ["error", "always"],
-    "no-cond-assign": "off"
+    "no-cond-assign": "off",
+    "no-unused-vars": "off"
   }
 };
