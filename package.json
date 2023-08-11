@@ -1,7 +1,7 @@
 {
   "name": "pulsar-ide-typescript-alpha",
   "main": "./lib/main",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Pulsar-native IDE provider package for TypeScript and JavaScript",
   "keywords": [],
   "repository": "https://github.com/savetheclocktower/pulsar-ide-typescript-alpha",
