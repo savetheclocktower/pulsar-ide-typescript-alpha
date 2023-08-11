@@ -41,7 +41,7 @@
           "title": "Enable",
           "type": "boolean",
           "default": true,
-          "description": "Whether to show diagnostic messages via the `linter` package. (Takes effect after a window reload or a restart of Pulsar.)"
+          "description": "Whether to show diagnostic messages via the `linter` package. (To change this setting for a specific kind of file, use a scoped setting.)"
         },
         "ignoredCodes": {
           "title": "Ignored Codes",
@@ -78,7 +78,7 @@
           "title": "Enable",
           "type": "boolean",
           "default": true,
-          "description": "Whether to provide symbols for the current file, for project-wide symbol search, and for going to the definition of a symbol. (Takes effect after a window reload or a restart of Pulsar.)"
+          "description": "Whether to provide symbols for the current file, for project-wide symbol search, and for going to the definition of a symbol. (To change this setting for a specific kind of file, use a scoped setting.)"
         },
         "ignoredTags": {
           "title": "Ignored Tags",
