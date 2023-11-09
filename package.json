@@ -20,7 +20,7 @@
     "source.tsx:root-scope-used"
   ],
   "dependencies": {
-    "atom-languageclient": "github:savetheclocktower/atom-languageclient#4c79701c2e43ad18612116f6bce4b59d03fc631c",
+    "atom-languageclient": "github:savetheclocktower/atom-languageclient#9a56b082cf917411d62479b2992f03e0396c09b5",
     "typescript": "^5.1.6",
     "typescript-language-server": "^3.3.2"
   },
@@ -30,7 +30,7 @@
       "title": "Include JavaScript",
       "type": "boolean",
       "default": false,
-      "description": "Whether to use this language server's features for JavaScript files."
+      "description": "Whether to use this language server's features for JavaScript files. This package will attempt to set sensible defaults for JavaScript projects, but you can customize the experience further with a [`jsconfig.json` file](https://code.visualstudio.com/docs/languages/jsconfig) at your project root."
     },
     "linter": {
       "type": "object",
@@ -124,7 +124,7 @@
             "type": "string"
           },
           "default": [],
-          "description": "A comma-separated list of additional language scopes for which the language server's features should be used. (The language server will not start automatically when you open one of these files; you may have to start the language server manually via the **Experimental Typescript Lsp: Start Language Server** command.)"
+          "description": "A comma-separated list of additional language scopes for which the language server's features should be used. (The language server will not start automatically when you open one of these files; you may have to start the language server manually via the **Pulsar Ide Typescript Alpha: Start Language Server** command.)"
         }
       }
     }
@@ -160,7 +160,7 @@
     },
     "autocomplete.provider": {
       "versions": {
-        "2.0.0": "provideAutocomplete"
+        "4.0.0": "provideAutocomplete"
       }
     },
     "code-actions": {
