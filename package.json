@@ -20,7 +20,7 @@
     "source.tsx:root-scope-used"
   ],
   "dependencies": {
-    "@savetheclocktower/atom-languageclient": "^1.17.6",
+    "@savetheclocktower/atom-languageclient": "1.17.7",
     "typescript": "^5.1.6",
     "typescript-language-server": "^3.3.2"
   },
@@ -79,6 +79,18 @@
           "type": "boolean",
           "default": true,
           "description": "Whether to provide symbols for the current file, for project-wide symbol search, and for going to the definition of a symbol. (To change this setting for a specific kind of file, use a scoped setting.)"
+        },
+        "enableForFileSymbols": {
+          "title": "Enable For File Symbols",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to act as a provider for file symbols. Has no effect unless **Enable** is also checked."
+        },
+        "enableForProjectSymbols": {
+          "title": "Enable For Project Symbols",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to act as a provider for project symbols. Affects the `symbols-view` commands **Toggle Project Symbols** and **Go To Declaration**. Has no effect unless **Enable** is also checked."
         },
         "ignoredTags": {
           "title": "Ignored Tags",
