@@ -4,6 +4,36 @@ An attempt to write a non-invasive IDE provider for TypeScript and JavaScript.
 
 _(The package name envisions that this could eventually be an official or semi-official Pulsar package, but it’s too early to presume that.)_
 
+---
+
+## IMPORTANT: New setting for v0.1.0 and above
+
+This package used to use Pulsar’s built-in version of Node to run [typescript-language-server](https://www.npmjs.com/package/typescript-language-server), but recent versions of the language server require Node 18 or above, and Pulsar is stuck on version 14 until it can upgrade its underlying Electron version.
+
+The solution is to supply your own version of Node so that `typescript-language-server` can run using the more modern version your project is probably already using. This is more hygienic anyway, and it’s only slightly more of a hassle.
+
+Here’s how this works:
+
+* If you don’t have Node installed on your system, or if your installed version is too old, you have [many options for installing the latest version of Node](https://nodejs.org/en/download/).
+
+* The “Path to Node” setting (or `pulsar-ide-typescript-alpha.nodeBin`) is what will run the built-in `typescript-language-server`. Its default value is `node`; since Pulsar inherits your shell environment, this will usually resolve to the version of Node that would run if you typed `node` from whatever directory you used to launch Pulsar from the command line.
+
+    Often this will just work — even with tools like [asdf](https://asdf-vm.com/) and [volta](https://volta.sh/) that use “shims” to manage multiple versions of Node.
+
+    Even if you launch Pulsar another way, it’s pretty good at recreating your default shell environment, including your `PATH`, so it’s still worth seeing if the default configuration works.
+
+* If it doesn’t work, you’ll see an error notification explaining that the language server failed to launch. You can open the package settings and supply a full, absolute path to a Node binary of version 18 or greater; you’ll know you’ve entered it properly when the error notification is replaced with a success notification.
+
+* If you want to specify different Node paths for different projects, consider [project-config](https://web.pulsar-edit.dev/packages/project-config) or [atomic-management](https://web.pulsar-edit.dev/packages/atomic-management); either will allow you to set config values of `pulsar-ide-typescript-alpha.nodeBin` on a per-project basis. (Even this might be overkill, though. As long as you point it to a compatible version of Node, you should easily be able to use that version everywhere, even if it doesn’t always match your project’s version.)
+
+### What if I use an older version of Node or TypeScript in my project?
+
+You don’t need to upgrade the version of Node you use in your project; you just need one version of Node that can run the latest `typescript-language-server`. So in the short term, the solution might be to install a newer version of Node using a tool like [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) or [asdf](https://asdf-vm.com/). You can then configure this package to use this newer version of Node _instead of_ inheriting the version of Node used in your shell environment.
+
+`typescript-language-server` is theoretically backwards-compatible, as I understand it, so this should work fine. If it doesn’t, then please file an issue against the package and let me know. It might be worth it in the future to let the user opt into bringing their own version of `typescript-language-server` so that such projects can keep using a known older version of the language server instead of needing to stay on an older version of this package.
+
+---
+
 ## What’s the philosophy?
 
 IDE features are great when they make you feel productive, but bad when they get in your way. Because the line between “useful” and “invasive” will vary per person, we want to provide an IDE experience that is, above all, customizable:

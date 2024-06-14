@@ -22,9 +22,16 @@
   "dependencies": {
     "@savetheclocktower/atom-languageclient": "1.17.7",
     "typescript": "^5.1.6",
-    "typescript-language-server": "^3.3.2"
+    "typescript-language-server": "^4.3.3"
   },
   "configSchema": {
+    "nodeBin": {
+      "title": "Path to Node",
+      "default": "node",
+      "type": "string",
+      "description": "Usually the default will detect the correct version of Node for your path. Specify this value if you encounter errors. Check the README for more information.",
+      "order": 0
+    },
     "includeJavaScript": {
       "order": 1,
       "title": "Include JavaScript",
