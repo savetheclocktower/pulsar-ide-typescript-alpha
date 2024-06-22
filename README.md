@@ -53,7 +53,7 @@ You can view a comprehensive list of file symbols with <kbd>Ctrl-R</kbd>/<kbd>Cm
 
 <p><img width="632" alt="file-symbols" src="https://github.com/savetheclocktower/pulsar-ide-typescript-alpha/assets/3450/6b07688b-b1f7-48bd-86ae-d3105eb213f9"></p>
 
-Or search the entire package for symbols via <kbd>Ctrl-Shift-R</kbd>/<kbd>Cmd-Shift-R</kbd>:
+Or search the entire project for symbols via <kbd>Ctrl-Shift-R</kbd>/<kbd>Cmd-Shift-R</kbd>:
 
 <p><img width="660" alt="project-wide-symbols" src="https://github.com/savetheclocktower/pulsar-ide-typescript-alpha/assets/3450/90b76096-1562-4f78-8f1a-59b00b1375c2"></p>
 

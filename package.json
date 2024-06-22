@@ -20,7 +20,7 @@
     "source.tsx:root-scope-used"
   ],
   "dependencies": {
-    "@savetheclocktower/atom-languageclient": "^1.17.9",
+    "@savetheclocktower/atom-languageclient": "^1.17.11",
     "typescript": "^5.1.6",
     "typescript-language-server": "^4.3.3"
   },
@@ -162,6 +162,11 @@
     "signature-help": {
       "versions": {
         "0.1.0": "consumeSignatureHelp"
+      }
+    },
+    "atom-ide-busy-signal": {
+      "versions": {
+        "0.1.0": "consumeBusySignal"
       }
     }
   },
