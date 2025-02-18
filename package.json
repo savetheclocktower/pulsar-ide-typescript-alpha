@@ -19,6 +19,11 @@
     "source.ts:root-scope-used",
     "source.tsx:root-scope-used"
   ],
+  "enhancedScopes": [
+    "source.js",
+    "source.ts",
+    "source.tsx"
+  ],
   "dependencies": {
     "@savetheclocktower/atom-languageclient": "^1.17.11",
     "typescript": "^5.1.6",
