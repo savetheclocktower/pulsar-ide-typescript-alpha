@@ -4,14 +4,14 @@
   "version": "0.1.4",
   "description": "A Pulsar-native IDE provider package for TypeScript and JavaScript",
   "keywords": [],
-  "repository": "https://github.com/savetheclocktower/pulsar-ide-typescript-alpha",
+  "repository": "https://github.com/savetheclocktower/pulsar-ide-typescript",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "activationCommands": {
     "atom-workspace": [
-      "pulsar-ide-typescript-alpha:start-language-server"
+      "pulsar-ide-typescript:start-language-server"
     ]
   },
   "activationHooks": [
