@@ -145,7 +145,7 @@
           "order": 0,
           "title": "Enable",
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Whether to enable automatic code formatting. When disabled, this package will not act as a code formatting provider under any circumstances. When enabled, you must still have a package such as `atom-ide-code-format` to implement code formatting and to control whether it is applied on save, while you type, or only when you ask for it.\n\n**Before enabling**, please ensure that this behavior will not interfere with any other format-on-save behavior might be active in your project from integrations with (e.g.) ESLint or Prettier.\n\n(Takes effect after a window reload or a restart of Pulsar.)"
         },
         "formattingRules": {
