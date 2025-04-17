@@ -135,8 +135,140 @@
         }
       }
     },
-    "advanced": {
+    "codeFormat": {
       "order": 5,
+      "type": "object",
+      "title": "Code Formatting",
+      "collapsed": false,
+      "properties": {
+        "enable": {
+          "order": 0,
+          "title": "Enable",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to enable automatic code formatting. When disabled, this package will not act as a code formatting provider under any circumstances. When enabled, you must still have a package such as `atom-ide-code-format` to implement code formatting and to control whether it is applied on save, while you type, or only when you ask for it.\n\n**Before enabling**, please ensure that this behavior will not interfere with any other format-on-save behavior might be active in your project from integrations with (e.g.) ESLint or Prettier.\n\n(Takes effect after a window reload or a restart of Pulsar.)"
+        },
+        "formattingRules": {
+          "order": 1,
+          "title": "Formatting Rules",
+          "type": "object",
+          "collapsed": false,
+          "description": "This section controls the specific style rules that will be applied when code formatting is invoked over a range or an entire file.\n\nThese settings correspond to identical settings in the [typescript-language-server configuration](https://github.com/typescript-language-server/typescript-language-server/blob/0a034dae6c777733f4c2f6d5b151c5ef781fb662/docs/configuration.md#workspacedidchangeconfiguration).\n\nIf any of these style settings should differ between TypeScript and JavaScript, you may specify scope-specific overrides in your `config.cson`.",
+          "properties": {
+            "semicolons": {
+              "title": "Semicolons",
+              "type": "string",
+              "enum": ["ignore", "insert", "remove"],
+              "default": "ignore",
+              "description": "Whether to enforce presence of absence of semicolons.",
+              "order": 0
+            },
+            "insertSpaceAfterCommaDelimiter": {
+              "title": "Insert space after comma delimiter",
+              "description": "Enabled: `[1, 2, 3]` Disabled: `[1,2,3]`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceAfterConstructor": {
+              "title": "Insert space after constructor",
+              "description": "Enabled: `constructor () {` Disabled: `constructor() {`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceAfterSemicolonInForStatements": {
+              "title": "Insert space after semicolon in “for” statements",
+              "description": "Enabled: `for (let i = 0; i < x.length; i++)` Disabled: `for (let i = 0;i < x.length;i++)`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceBeforeAndAfterBinaryOperators": {
+              "title": "Insert space before and after binary operators",
+              "description": "Enabled: `let x = 0` Disabled: `let x=0`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceAfterKeywordsInControlFlowStatements": {
+              "title": "Insert space after keywords in control flow statements",
+              "description": "Enabled: `if (foo) {` Disabled: `if(foo) {`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceAfterFunctionKeywordForAnonymousFunctions": {
+              "title": "Insert space after “function” keyword for anonymous functions",
+              "description": "Enabled: `function () {` Disabled: `function() {`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": {
+              "title": "Insert space after opening and before closing non-empty parentheses",
+              "description": "Enabled: `if ( foo )` Disabled: `if (foo)`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": {
+              "title": "Insert space after opening and before closing non-empty braces",
+              "description": "Enabled: `return { x, y }` Disabled: `return {x, y}`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": {
+              "title": "Insert space after opening and before closing non-empty brackets",
+              "description": "Enabled: `[1, 2, 3]` Disabled: `[ 1, 2, 3 ]`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": {
+              "title": "Insert space after opening and before closing empty braces",
+              "description": "Enabled: `return { }` Disabled: `return {}`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": {
+              "title": "Insert space after opening and before closing JSX expression braces",
+              "description": "Enabled: `<x>{ foo }</x>` Disabled: `<x>{foo}</x>`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": {
+              "title": "Insert space after opening and before closing template string braces",
+              "description": "Enabled: `foo ${ bar }` Disabled: `foo ${bar}`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceBeforeFunctionParenthesis": {
+              "title": "Insert space before function parenthesis",
+              "description": "Enabled: `function foo () {` Disabled: `function foo() {`",
+              "type": "boolean",
+              "default": false
+            },
+            "insertSpaceAfterTypeAssertion": {
+              "title": "Insert space after type assertion",
+              "description": "Enabled: `: asserts x is Foo` Disabled: `:asserts X is foo`",
+              "type": "boolean",
+              "default": true
+            },
+            "insertSpaceBeforeTypeAnnotation": {
+              "title": "Insert space before type annotation",
+              "description": "Enabled: `type Foo : unknown` Disabled: `type Foo: unknown`",
+              "type": "boolean",
+              "default": true
+            },
+            "placeOpenBraceOnNewLineForControlBlocks": {
+              "title": "Place open brace on new line for control blocks",
+              "type": "boolean",
+              "default": false
+            },
+            "placeOpenBraceOnNewLineForFunctions": {
+              "title": "Place open brace on new line for functions",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    "advanced": {
+      "order": 6,
       "collapsed": true,
       "type": "object",
       "title": "Advanced",
@@ -199,7 +331,17 @@
     },
     "code-format.range": {
       "versions": {
-        "0.1.0": "provideCodeFormat"
+        "0.1.0": "provideRangeCodeFormat"
+      }
+    },
+    "code-format.onType": {
+      "versions": {
+        "0.1.0": "provideOnTypeCodeFormat"
+      }
+    },
+    "code-format.onSave": {
+      "versions": {
+        "0.1.0": "provideOnSaveCodeFormat"
       }
     },
     "call-hierarchy": {
